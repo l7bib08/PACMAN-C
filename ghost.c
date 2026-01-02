@@ -12,7 +12,7 @@ void moveGhost(Ghost *g) {
     if (dir == 2) ny--;
     if (dir == 3) ny++;
 
-    if (!isWall(nx, ny) && map[nx][ny] != 'G') {
+    if (!isWall(nx, ny)) {
         g->x = nx;
         g->y = ny;
     }
