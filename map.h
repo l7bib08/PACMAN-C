@@ -6,12 +6,13 @@
 
 extern char map[ROWS][COLS];
 
-void drawMap(void);
-
+void drawMap(void); 
 int isInside(int x, int y);
 int isWall(int x, int y);
 
-
 int countPellets(void);
+
+void loadLevel(int level);
+int getMaxLevels(void);
 
 #endif
