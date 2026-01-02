@@ -64,12 +64,13 @@ void drawMap(void) {
 }
 
 int isInside(int x, int y) {
-    return (x >= 0 && x < ROWS && y >= 0 && y < COLS - 1);
+    return (x >= 0 && x < COLS - 1 && y >= 0 && y < ROWS);
 }
 
 int isWall(int x, int y) {
     if (!isInside(x, y)) return 1;
-    return map[x][y] == '+' || map[x][y] == '-' || map[x][y] == '|';
+    char c = map[y][x];
+    return (c == '+' || c == '-' || c == '|');
 }
 
 int countPellets(void) {
