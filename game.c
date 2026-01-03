@@ -44,10 +44,10 @@ static void renderGame(SDL_Renderer *r, const Player *p, const Ghost *g, int lev
             char c = map[i][j];
 
             if (c == '+' || c == '-' || c == '|') {
-                SDL_SetRenderDrawColor(r, 0, 0, 255, 255);  // mur bleu
+                SDL_SetRenderDrawColor(r, 0, 0, 255, 255);  
                 drawFilledRect(r, px, py, t, t);
             } else {
-                // pellet
+                
                 if (c == '*') {
                     SDL_SetRenderDrawColor(r, 255, 255, 255, 255);
                     int s = t / 5;
@@ -94,6 +94,7 @@ void startGame(void) {
         return;
     }
 
+
     SDL_Window *win = SDL_CreateWindow("PACMAN SDL3", WINDOW_W, WINDOW_H, 0);
     if (!win) {
         printf("SDL_CreateWindow error: %s\n", SDL_GetError());
@@ -137,7 +138,7 @@ void startGame(void) {
                 char mv = arrowToMove(key);
                 if (mv) movePlayer(&pacman, mv);
             }
-        }
+          
 
         
         int ghostDelay = 220 - level * 30;
@@ -184,4 +185,5 @@ void startGame(void) {
     SDL_DestroyRenderer(ren);
     SDL_DestroyWindow(win);
     SDL_Quit();
+    }
 }
